@@ -1,6 +1,6 @@
 from airflow.sdk import DAG
 from airflow.providers.standard.operators.bash import BashOperator #오퍼레이터 : 설계도
-
+# 버전마다 위 선언이 다른 것 같다 airflow example  과 동일하게 선언하지 않아서 airflow  에 안 떴음 !
 
 import pendulum
 
@@ -15,7 +15,7 @@ with DAG (
     
     run_1 = BashOperator(
         task_id="run_1",
-        bash_command="/opt/airflow/plugins/shell/select_fruit.sh ORANGE"
+        bash_command="/opt/airflow/plugins/shell/select_fruit.sh Orange"
     )
     run_2 = BashOperator(
         task_id="run_2",
