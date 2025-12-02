@@ -1,4 +1,7 @@
-from airflow import DAG, BashOperator
+from airflow.sdk import DAG
+from airflow.providers.standard.operators.bash import BashOperator #오퍼레이터 : 설계도
+
+
 import pendulum
 
 
