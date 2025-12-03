@@ -16,7 +16,7 @@ with DAG (
     
     send_email = EmailOperator(
         task_id="send_email",
-        conn_id="smtp_gmail",
+        conn_id="SMTP_Gmail",
         to="heejin8273@gmail.com",
         subject="airflow email send success!",
         html_content="success! good!"
