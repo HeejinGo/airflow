@@ -6,7 +6,11 @@ from airflow.providers.standard.operators.python import (
 from airflow.sdk import DAG
 
 from utils.get_fruit import select_fruit
+from plugins.common.common_func import get_sftp
 
+import random
+
+rand_int = random.randint(0,3)
 
 with DAG (
     dag_id="dags_python_operator",
@@ -21,5 +25,9 @@ with DAG (
         python_callable=select_fruit
     )
 
-    python_task_1
-    
+    python_task_2 = PythonOperator(
+        task_id='python_task_2',
+        python_callable=get_sftp
+    )
+
+    python_task_1 >> python_task_2
