@@ -1,13 +1,11 @@
 import pendulum
 
 from airflow.providers.standard.operators.python import (
-    ExternalPythonOperator,
     PythonOperator,
-    PythonVirtualenvOperator,
 )
 from airflow.sdk import DAG
 
-from utils.test import select_fruit
+from utils.get_fruit import select_fruit
 
 
 with DAG (
