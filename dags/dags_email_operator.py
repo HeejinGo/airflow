@@ -1,7 +1,6 @@
 from airflow.sdk import DAG
 from airflow.providers.standard.operators.bash import BashOperator 
 from airflow.providers.smtp.operators.smtp import EmailOperator
-# 버전마다 위 선언이 다른 것 같다 airflow example  과 동일하게 선언하지 않아서 airflow  에 안 떴음 !
 
 import pendulum
 
