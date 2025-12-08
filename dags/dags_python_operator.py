@@ -6,8 +6,10 @@ from airflow.providers.standard.operators.python import (
 from airflow.sdk import DAG
 
 from utils.get_fruit import select_fruit
-from utils.common.common_func import get_sftp
-
+from utils.common.common_func import (
+    get_sftp,
+    register
+)
 import os
 
 
@@ -33,4 +35,16 @@ with DAG (
         python_callable=get_sftp
     )
 
-    python_task_1 >> python_task_2
+    python_task_3 = PythonOperator(
+        task_id='python_task_3',
+        python_callable=register,
+        op_kwargs={
+            'name' = 'ghj',
+            'sex' = 'woman',
+            'country' = 'korea',
+            'city' = 'seoul'
+        }
+    )
+
+
+    python_task_1 >> python_task_2 >> python_task_3
