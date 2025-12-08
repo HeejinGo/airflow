@@ -6,7 +6,10 @@ from airflow.providers.standard.operators.python import (
 from airflow.sdk import DAG
 
 from utils.get_fruit import select_fruit
-from plugins.common.common_func import get_sftp
+from utils.common.common_func import get_sftp
+
+import os
+
 
 import random
 
