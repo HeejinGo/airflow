@@ -13,7 +13,7 @@ with DAG (
     catchup=False,
     tags=["test", "bash", "template"],
 ) as dag:
-    bash_t1 = BashOperator( ㄴ
+    bash_t1 = BashOperator( 
         task_id="bash_t1",
         bash_command='echo "data_interval_start : {{ data_interval_start }}"',
     )
