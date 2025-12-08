@@ -39,10 +39,10 @@ with DAG (
         task_id='python_task_3',
         python_callable=register,
         op_kwargs={
-            'name' = 'ghj',
-            'sex' = 'woman',
-            'country' = 'korea',
-            'city' = 'seoul'
+            'name':'ghj',
+            'sex':'woman',
+            'country':'korea',
+            'city':'seoul'
         }
     )
 
