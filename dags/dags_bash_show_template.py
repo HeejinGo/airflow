@@ -24,6 +24,8 @@ with DAG (
     # show_templates()
     def show_templates(**kwargs):
         pprint(kwargs)
+        pprint(kwargs['ti'])
+        pprint(kwargs['logical_date'])
         
     task_1 = PythonOperator(
         task_id="task_1",
