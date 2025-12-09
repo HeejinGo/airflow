@@ -1,9 +1,10 @@
 import datetime
 import pendulum
-from airflow.sdk import DAG
 from airflow.providers.standard.operators.bash import BashOperator #오퍼레이터 : 설계도
 import os
 from pprint import pprint
+
+from airflow.sdk import DAG, task
 
 from airflow.providers.standard.operators.python import (
     PythonOperator,
