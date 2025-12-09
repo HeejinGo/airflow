@@ -16,4 +16,4 @@ with DAG (
     def show_templates(**kwargs):
         pprint(kwargs)
     
-    show_templates()
+    python_task
