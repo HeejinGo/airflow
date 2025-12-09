@@ -17,8 +17,17 @@ with DAG (
     catchup=False,
     tags=["test", "bash", "template"],
 ) as dag:
-    @task(task_id='python_task')
+    # @task(task_id='python_task')
+    # def show_templates(**kwargs):
+    #     pprint(kwargs)
+    
+    # show_templates()
     def show_templates(**kwargs):
         pprint(kwargs)
+        
+    task_1 = PythonOperator(
+        task_id="task_1",
+        python_callable=show_templates
+    )
     
-    show_templates()
+    task_1
