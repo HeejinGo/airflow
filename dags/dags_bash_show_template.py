@@ -20,4 +20,4 @@ with DAG (
     def show_templates(**kwargs):
         pprint(kwargs)
     
-    python_task
+    show_templates()
