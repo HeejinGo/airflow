@@ -5,6 +5,10 @@ from airflow.providers.standard.operators.bash import BashOperator #오퍼레이
 import os
 from pprint import pprint
 
+from airflow.providers.standard.operators.python import (
+    PythonOperator,
+)
+
 with DAG (
     dag_id="dags_bash_show_template",
     schedule="30 9 * * *",
