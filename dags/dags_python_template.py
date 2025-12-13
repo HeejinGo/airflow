@@ -1,11 +1,10 @@
 import pendulum
 
+from airflow.sdk import DAG, task
+
 from airflow.providers.standard.operators.python import (
     PythonOperator,
 )
-from airflow.sdk import DAG
-from utils.get_fruit import select_fruit
-from airflow.decorators import task
 
 with DAG (
     dag_id="dags_python_template",
