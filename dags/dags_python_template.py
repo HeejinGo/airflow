@@ -14,9 +14,10 @@ with DAG (
     tags=["test", "python"],
 ) as dag:
     
-    def python_func1(start_date, end_date, **kwargs):
+    def python_func1(start_date, end_date, kst_date, **kwargs):
         print(start_date)
         print(end_date)
+        print(kst_date)
         
     python_t1 = PythonOperator(
         task_id='python_t1',
@@ -24,7 +25,7 @@ with DAG (
         op_kwargs={
             'start_date':'{{data_interval_start}}',
             'end_date':'{{data_interval_end | ds}}',
-            'start_date_kst_ds': "{{ data_interval_start.in_timezone('Asia/Seoul').strftime('%Y-%m-%d') }}"
+            'kst_date': "{{ data_interval_start.in_timezone('Asia/Seoul').strftime('%Y-%m-%d') }}"
         }
     )
     
