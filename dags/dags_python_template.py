@@ -30,8 +30,8 @@ with DAG (
     @task(task_id='python_func2')
     def python_func2(**kwargs):
         print(kwargs)
-        print('ti' + kwargs['ti'])
-        print('ds' + kwargs['ds'])
+        print('ti' + str(kwargs['ti']))
+        print('ds' + str(kwargs['ds']))
         print('data_interval_start' + str(kwargs['data_interval_start']))
         print('data_interval_end' + str(kwargs['data_interval_end']))
         
