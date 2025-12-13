@@ -12,14 +12,14 @@ with DAG (
 ) as dag:
     bash_t1 = BashOperator(
         task_id='bash_t1',
-        bash_command='echo "date_interval_start : {{ date_interval_start }}"'
+        bash_command='echo "data_interval_start : {{ data_interval_start }}"'
     )
     
     bash_t2 = BashOperator(
         task_id='bash_t2',
         env={
-            'start_date':'{{date_interval_start | ds}}',
-            'end_date':'{{date_interval_end | ds}}'
+            'start_date':'{{data_interval_start | ds}}',
+            'end_date':'{{data_interval_end | ds}}'
         },
         bash_command='echo $start_date && echo $end_date'
     )
