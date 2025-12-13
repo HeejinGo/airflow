@@ -19,7 +19,7 @@ with DAG (
             'end_date':'{{ data_interval_end.in_timezone("Asia/Seoul") - macros.dateutil.relativedelta.relativedelta(days=1)}}',
             'end_date_gpt': '{{ macros.ds_add(data_interval_end.in_timezone("Asia/Seoul") | ds, -1) }}'
         },
-        bash_command='echo $start_date && echo $end_date && echo end_date_gpt'
+        bash_command='echo $start_date && echo $end_date && echo $end_date_gpt'
     )
     
     bash_t1
