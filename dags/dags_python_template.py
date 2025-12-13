@@ -24,7 +24,7 @@ with DAG (
         op_kwargs={
             'start_date':'{{data_interval_start}}',
             'end_date':'{{data_interval_end | ds}}',
-            'start_date_kst_ds':'{{ data_interval_start.in_timezone('Asia/Seoul').strftime('%Y-%m-%d') }}'
+            'start_date_kst_ds': "{{ data_interval_start.in_timezone('Asia/Seoul').strftime('%Y-%m-%d') }}"
         }
     )
     
